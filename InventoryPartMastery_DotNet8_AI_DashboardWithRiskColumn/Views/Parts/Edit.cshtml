@@ -1,0 +1,39 @@
+
+@model InventoryPartMastery.Models.Part
+@{
+    ViewBag.Title = "Edit Part";
+}
+<h3>Edit Part</h3>
+<form asp-action="Edit" method="post">
+    <input type="hidden" asp-for="Id" />
+    <div class="mb-3">
+        <label asp-for="PartNumber" class="form-label"></label>
+        <input asp-for="PartNumber" class="form-control" />
+        <span asp-validation-for="PartNumber" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="PartName" class="form-label"></label>
+        <input asp-for="PartName" class="form-control" />
+        <span asp-validation-for="PartName" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="PartLocation" class="form-label"></label>
+        <input asp-for="PartLocation" class="form-control" />
+        <span asp-validation-for="PartLocation" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="PartBin" class="form-label"></label>
+        <input asp-for="PartBin" class="form-control" />
+        <span asp-validation-for="PartBin" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="StockQuantity" class="form-label"></label>
+        <input asp-for="StockQuantity" type="number" class="form-control" />
+        <span asp-validation-for="StockQuantity" class="text-danger"></span>
+    </div>
+    <button type="submit" class="btn btn-primary">Save</button>
+    <a asp-action="Index" class="btn btn-secondary">Cancel</a>
+</form>
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
